@@ -1,5 +1,7 @@
 const express = require("express");
+const path = require("path");
 const dotenv = require("dotenv");
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 const dbConnection = require("./models/db");
 
 const reservationRoutes = require("./routes/reservationRoutes");
@@ -14,8 +16,6 @@ const trainRoutes = require("./routes/trainRoutes");
 const customerRepRoutes = require("./routes/customerRepresentative");
 const transitLineRoutes = require("./routes/transitLineRoutes");
 const mainPageRoutes = require("./routes/mainPageRoutes");
-
-dotenv.config(); // Load environment variables
 
 const app = express();
 const PORT = process.env.PORT || 3000;
